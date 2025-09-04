@@ -1,0 +1,11 @@
+scylladb:
+  host: ["172.31.16.8"]
+  username: scylladb
+  password: password
+  keyspace: employee_db
+
+redis:
+  enabled: false
+  host: 172.31.16.8
+  password: password
+  database: 0

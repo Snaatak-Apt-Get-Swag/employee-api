@@ -1,0 +1,18 @@
+nohup: ignoring input
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /metrics                  --> github.com/penglongli/gin-metrics/ginmetrics.(*Monitor).Use.func1 (2 handlers)
+[GIN-debug] GET    /api/v1/employee/health   --> employee-api/api.HealthCheckAPI (4 handlers)
+[GIN-debug] GET    /api/v1/employee/health/detail --> employee-api/api.DetailedHealthCheckAPI (4 handlers)
+[GIN-debug] POST   /api/v1/employee/create   --> employee-api/api.CreateEmployeeData (4 handlers)
+[GIN-debug] GET    /api/v1/employee/search   --> employee-api/api.ReadEmployeeData (4 handlers)
+[GIN-debug] GET    /api/v1/employee/search/all --> employee-api/api.ReadCompleteEmployeesData (4 handlers)
+[GIN-debug] GET    /api/v1/employee/search/location --> employee-api/api.ReadEmployeesLocation (4 handlers)
+[GIN-debug] GET    /api/v1/employee/search/designation --> employee-api/api.ReadEmployeesDesignation (4 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] [ERROR] listen tcp :8080: bind: address already in use
