@@ -12,7 +12,7 @@ type Employee struct {
 	Status         string `json:"status"`
 	EmailID        string `json:"email"`
 	PhoneNumber    string `json:"phone_number"`
-        AnnualPackage  string `json:"annual_package"`
+	AnnualPackage  string `json:"annual_package"`
 }
 
 // CustomMessage is a structure for custom message with Gin

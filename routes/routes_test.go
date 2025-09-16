@@ -60,4 +60,3 @@ func performRequest(router *gin.Engine, req *http.Request) *httptest.ResponseRec
 	router.ServeHTTP(w, req)
 	return w
 }
-

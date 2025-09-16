@@ -55,9 +55,9 @@ func main() {
 	monitor.Use(router)
 
 	// Middlewares
-	router.Use(CORSMiddleware())                  // Added CORS
-	router.Use(gin.Recovery())                    // Panic recovery
-	router.Use(middlewares.LoggingMiddleware())   // Custom logging
+	router.Use(CORSMiddleware())                // Added CORS
+	router.Use(gin.Recovery())                  // Panic recovery
+	router.Use(middlewares.LoggingMiddleware()) // Custom logging
 
 	// API Routing
 	v1 := router.Group("/api/v1")
@@ -65,7 +65,7 @@ func main() {
 	routes.CreateRouterForEmployee(v1)
 
 	// Swagger Docs
-	url := ginSwagger.URL("http://13.48.67.195:8080/swagger/doc.json")
+	url := ginSwagger.URL("http://OT-MS-Load-Balancer-1191154576.ap-south-1.elb.amazonaws.com/swagger/doc.json")
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler, url))
 
 	// Start server

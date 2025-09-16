@@ -5,11 +5,11 @@ import (
 	"employee-api/config"
 	"employee-api/model"
 	"encoding/json"
-        "strconv"
 	"github.com/gin-gonic/gin"
 	redis "github.com/redis/go-redis/v9"
 	"github.com/sirupsen/logrus"
 	"net/http"
+	"strconv"
 	"time"
 )
 
@@ -268,7 +268,7 @@ func CreateEmployeeData(c *gin.Context) {
 		errorResponse(c, "Cannot write data to the system, request failure")
 		return
 	}
-	
+
 	// Insert into employee_info table
 	queryString := "INSERT INTO employee_info(id, name, designation, department, joining_date, address, office_location, status, email, phone_number) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 	if err := scyllaClient.Query(queryString,
@@ -281,7 +281,7 @@ func CreateEmployeeData(c *gin.Context) {
 	// Insert into employee_salary table
 	salaryQueryString := "INSERT INTO employee_salary(id, process_date, name, salary, status) VALUES(?, ?, ?, ?, ?)"
 	processDate := time.Now().Format("02-01-2006") // Current date in DD-MM-YYYY format
-	
+
 	// Use annual_package from form, default to 30000 if not provided or invalid
 	var salary float32 = 30000.0
 	if request.AnnualPackage != "" {
@@ -310,7 +310,6 @@ func CreateEmployeeData(c *gin.Context) {
 		logrus.Infof("Cleared Redis cache after employee creation")
 	}
 }
-
 
 // writeinRedis is a method to write the data in Redis cache
 func writeinRedis(cacheKey, cacheValue string) {
